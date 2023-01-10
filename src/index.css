@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+:root {
+    /* Base font size */
+    font-size: 10px;
+
+    /* Heading height variable*/
+    --heading-height: 26em;
+
+    --main-title-color: #f5f5f5;
+    --container-color: #98731f;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #101010;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: var(--heading-height);
+}
+
+/* Create angled background with 'before' pseudo-element */
+header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 6em;
+    width: 100%;
+    height: calc(var(--heading-height) + 10em);
+    z-index: -1;
+    transform: skewY(-3.5deg);
+    background:
+        linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+        url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80) no-repeat center,
+        linear-gradient(#4e4376, #2b5876);
+    background-size: cover;
+    border-bottom: .2em solid #fff;
+}
+
+h1 {
+    margin: 0;
+    font-size: calc(2.8em + 2.6vw);
+    font-weight: 700;
+    letter-spacing: .01em;
+    padding: 3rem 0 0 4.5rem;
+    text-shadow: .022em .022em .022em #111;
+    color: #fff;
+}
+
+h2,
+h3 {
+    color: var(--main-title-color);
+    font-family: "Roboto";
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+header h2 {
+    padding: 1rem 0 0 4.5rem;
+}
+
+.contGame h3 {
+    font-size: x-large;
+    color: black;
+    font-weight: 600;
+}
+
+main {
+    padding: calc(var(--heading-height) + 1.5vw) 4em 0;
+}
+
+p {
+    font-size: calc(2em + .25vw);
+    font-weight: 400;
+    line-height: 1.3;
+    color: #fcfcfc;
+}
+
+
+
+/* Button */
+.link {
+    align-items: center;
+    background-image: linear-gradient(to bottom, #98731f, #ce8469, #e3a5ae, #e5cedf, #f5f5f5);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    position: relative;
+    left: 45%;
+    transform: translate(-50%);
+}
+
+.link:active,
+.link:hover {
+    outline: 0;
+    background-color: #2b5876;
+}
+
+
+@media (min-width: 768px) {
+    .link {
+        font-size: 24px;
+        min-width: 196px;
+    }
+}
+
+/* Coming from JS */
+.titleGame {
+    color: var(--main-title-color);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.contGame {
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 15px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--container-color);
+
+}
+
+.contGame img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+
+}
